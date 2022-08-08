@@ -1,0 +1,252 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    /* #EE4D2D */
+    --primary-color: #10ad71;
+    --border-color:#dbdbdb;
+    --star-color: #ffce3d;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+}
+
+*{
+    box-sizing: inherit;
+}
+a::selection {
+    background-color: #5bcea2;
+}
+li::selection {
+    background-color: #5bcea2;
+}
+span::selection {
+    background-color: #5bcea2;
+}
+button::selection {
+    background-color: #5bcea2;
+}
+h3::selection {
+    background-color: #5bcea2;
+}
+p::selection {
+    background-color: #5bcea2;
+}
+html{
+    /* để font size tương ứng quy đổi giữa rem và px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /*  sans-serif: chủng của nó là tập hợp font chữ k có gạch chân */
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* Responsive */
+
+
+.grid_row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+
+}
+
+/* Test */
+.grid__colum-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.66666666666667%;
+    /* 16.66666666666667 */
+}
+
+.grid__colum-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 19.8%;
+    height: 307px;
+    display: inline-block
+    
+}
+.grid__colum-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.33333333333333%;
+    margin-bottom: 10px;
+    /* 83.33333333333333% */
+}
+/* chia 5 sản phẩm: 16.46668 */
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear .3s;
+    z-index: 10;
+    display: none;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.4);
+   
+}
+
+
+.modal__body{
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+   position: relative;
+   border-radius: 5px;
+   overflow: hidden;
+   z-index: 2;
+   animation: growth linear .1s;
+}
+
+
+.upcase{
+    text-transform: uppercase;
+}
+
+ /* hoa chữ cái đầu */
+ .capitalize {
+    text-transform: capitalize;
+}
+/* btn */
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+}
+.btn-normal:hover{
+background-color: rgb(0, 0, 0, 0.05);
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 12px;
+}
+
+
+.select-input {
+    position: relative;
+    height: 34px;
+    min-width: 200px;
+    padding-left: 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.select-input:hover .slect-input__list {
+    display: block;
+}
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.slect-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style: none;
+    padding: 8px 16px;
+    display: none;
+    z-index: 0;
+
+}
+
+.slect-input__link {
+    display: block;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 4px 0;
+    margin-bottom: 10px;
+}
+
+.slect-input__link:hover {
+color: var(--primary-color);
+}
+
+
+/* pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    padding: 5px;
+    margin: 0 4px;
+  
+}
+.pagination-item--active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    
+}
+
+.pagination-item__link {
+    --height: 30px;
+    display: block;
+    color: #939393;
+    text-decoration: none;
+    font-size: 1.6rem;
+    min-width: 40px;
+    height: var(--height);
+    text-align: center;
+    line-height: var(--height);
+}
+
